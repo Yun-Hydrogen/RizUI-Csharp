@@ -24,11 +24,8 @@ jobs:
           dotnet-version: '10.0.x'
           include-prerelease: true
 
-      - name: Restore
-        run: dotnet restore dotnet/RizUI.Demo/RizUI.Demo.sln
-
-      - name: Build
-        run: dotnet build dotnet/RizUI.Demo/RizUI.Demo.sln -c Release --no-restore
+      - name: Build Demo (Release)
+        run: dotnet build dotnet/RizUI.Demo/RizUI.Demo.sln -c Release
 
       - name: Upload demo artifacts
         uses: actions/upload-artifact@v4
