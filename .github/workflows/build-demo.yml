@@ -1,8 +1,6 @@
 name: Build Demo
 
 on:
-  push:
-    branches: [main, sharp-dev]
   pull_request:
 
 jobs:
@@ -22,7 +20,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-          include-prerelease: true
 
       - name: Build Demo (Release)
         run: dotnet build dotnet/RizUI.Demo/RizUI.Demo.sln -c Release
